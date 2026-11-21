@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b13">
+  <meta name="description" content="Vizart Medya; sosyal medya yönetimi, grafik tasarım, fotoğraf ve video prodüksiyonu, Meta reklam yönetimi, kurumsal kimlik ve web tasarımı hizmetleri sunar.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Vizart Medya — Fikirden yayına, tek yaratıcı ekip">
+  <meta property="og:description" content="Sosyal medya, tasarım, prodüksiyon ve Meta reklamlarını markanız için tek stratejide birleştiriyoruz.">
+  <meta name="twitter:card" content="summary">
+  <title>Vizart Medya — Fikirden yayına, tek yaratıcı ekip</title>
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#080b13;--bg-2:#0d1320;--bg-3:#121b2c;--panel:#101827;
+      --blue:#244cff;--blue-2:#5474ff;--blue-3:#9db0ff;--cyan:#9bdcff;
+      --white:#f6f7fb;--muted:#aab4c7;--muted-2:#78859c;
+      --line:rgba(226,234,255,.14);--line-strong:rgba(226,234,255,.25);
+      --paper:#edf1f8;--ink:#0b1120;--ink-muted:#526078;
+      --max:1240px;--gutter:clamp(20px,5vw,76px);--radius:18px;
+      --ease:cubic-bezier(.2,.72,.2,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px;background:var(--bg);overflow-x:clip}
+    body{margin:0;background:var(--bg);color:var(--white);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font:inherit}
+    button,a,input,textarea,select{ -webkit-tap-highlight-color:transparent }
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    ::selection{background:var(--blue);color:#fff}
+    .skip-link{position:fixed;z-index:999;top:10px;left:10px;padding:10px 14px;background:#fff;color:#090d16;transform:translateY(-150%);border-radius:8px}
+    .skip-link:focus{transform:translateY(0)}
+    .wrap{width:min(var(--max),calc(100% - 2*var(--gutter)));margin-inline:auto}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--blue-3);font-size:10px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:24px;height:1px;background:currentColor}
+    .section{position:relative;padding:clamp(78px,9vw,124px) 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.58fr);gap:48px;align-items:end;margin-bottom:46px}
+    .section-index{display:block;margin-bottom:15px;color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+    .section-title{max-width:820px;margin:0;font-size:clamp(38px,5.5vw,72px);line-height:.99;letter-spacing:-.075em;font-weight:780}
+    .section-desc{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+    .button{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:22px;padding:0 19px;border:1px solid var(--line-strong);border-radius:9px;background:transparent;color:var(--white);font-size:11px;font-weight:800;letter-spacing:.035em;transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s}
+    .button:hover{transform:translateY(-2px);border-color:var(--blue-3)}
+    .button-primary{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 34px rgba(36,76,255,.23)}
+    .button-primary:hover{background:#3c60ff;border-color:#3c60ff}
+    .button-quiet{background:rgba(255,255,255,.035)}
+    .button .arrow{font-size:17px;line-height:1}
+    .topbar{position:sticky;z-index:100;top:0;height:78px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:rgba(8,11,19,.9);backdrop-filter:blur(18px)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .logo{width:130px;flex:none}
+    .logo img{width:100%;height:auto}
+    .nav{display:flex;align-items:center;gap:clamp(14px,2vw,27px)}
+    .nav a{color:#b6c0d1;font-size:10px;font-weight:750;transition:color .2s}
+    .nav a:hover,.nav a[aria-current="location"]{color:#fff}
+    .nav .nav-cta{padding:11px 15px;border:1px solid rgba(157,176,255,.5);border-radius:7px;color:#fff}
+    .menu-toggle{display:none;width:43px;height:42px;border:1px solid var(--line-strong);border-radius:8px;background:transparent;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav{display:none}
+    .hero{position:relative;overflow:hidden;padding:clamp(56px,7vw,94px) 0 36px;border-top:0}
+    .hero:before{content:"";position:absolute;z-index:0;top:-280px;right:-220px;width:720px;height:720px;background:radial-gradient(circle,rgba(36,76,255,.19),transparent 67%);pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(350px,.97fr);align-items:center;gap:clamp(32px,6vw,78px)}
+    .hero-copy{max-width:730px}
+    .hero .eyebrow{margin-bottom:23px}
+    .hero h1{margin:0;font-size:clamp(54px,7.3vw,100px);line-height:.94;letter-spacing:-.092em;font-weight:820}
+    .hero h1 .accent{display:block;color:var(--blue-3)}
+    .hero-intro{max-width:570px;margin:26px 0 0;color:#b5bfd0;font-size:15px;line-height:1.9}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+    .hero-proof{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:32px;padding-top:20px;border-top:1px solid var(--line);color:#a1adc2;font-size:9px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+    .hero-proof span{display:flex;align-items:center;gap:8px}
+    .hero-proof span:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue-3);box-shadow:0 0 0 4px rgba(157,176,255,.11)}
+    .hero-art{position:relative;isolation:isolate;min-height:495px;overflow:hidden;border:1px solid rgba(175,193,255,.25);border-radius:24px;background:linear-gradient(145deg,#1c3dd1 0%,#122b98 46%,#080e24 100%);box-shadow:0 28px 90px rgba(0,0,0,.3)}
+    .hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(135deg,#000,transparent 78%)}
+    .art-top{position:absolute;z-index:2;top:22px;left:23px;right:23px;display:flex;justify-content:space-between;gap:12px;color:#d9e2ff;font-size:9px;font-weight:800;letter-spacing:.15em}
+    .art-v{position:absolute;z-index:1;top:62px;left:4%;color:rgba(4,10,39,.82);font-size:clamp(210px,28vw,370px);line-height:.8;letter-spacing:-.16em;font-weight:950}
+    .art-orbit{position:absolute;z-index:2;top:91px;right:10%;width:170px;height:170px;border:1px solid rgba(255,255,255,.32);border-radius:50%;box-shadow:0 0 0 22px rgba(255,255,255,.045),0 0 0 50px rgba(255,255,255,.03)}
+    .art-orbit:after{content:"";position:absolute;top:15px;right:8px;width:13px;height:13px;border-radius:50%;background:#d9e4ff;box-shadow:0 0 25px #d9e4ff}
+    .art-band{position:absolute;z-index:3;left:-8%;right:-8%;top:49%;height:86px;display:flex;align-items:center;justify-content:center;transform:rotate(-9deg);border-block:1px solid rgba(255,255,255,.55);background:#080d1c;box-shadow:0 17px 35px rgba(0,0,0,.2)}
+    .art-band span{white-space:nowrap;font-size:clamp(14px,1.7vw,21px);font-weight:900;letter-spacing:.17em}
+    .art-bottom{position:absolute;z-index:3;left:23px;right:23px;bottom:22px;display:flex;justify-content:space-between;gap:12px;color:#dce5ff;font-size:9px;font-weight:800;letter-spacing:.13em}
+    .art-card{position:absolute;z-index:4;right:8%;bottom:78px;width:148px;padding:12px;border:1px solid rgba(255,255,255,.35);border-radius:12px;background:rgba(8,13,29,.82);backdrop-filter:blur(12px);transform:rotate(5deg)}
+    .art-card small{display:block;color:#b9c8ff;font-size:8px;letter-spacing:.16em;font-weight:800}
+    .art-card strong{display:block;margin-top:10px;font-size:17px;line-height:1.1;letter-spacing:-.05em}
+    .art-card i{display:block;width:100%;height:5px;margin-top:13px;border-radius:20px;background:linear-gradient(90deg,#9db0ff 65%,rgba(255,255,255,.18) 65%)}
+    .ticker{overflow:hidden;border-block:1px solid var(--line);background:#0d1421}
+    .ticker-track{display:flex;width:100%;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;padding:16px var(--gutter);color:#ced6e5;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .ticker-track span{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+    .ticker-track b{color:#7891ff;font-weight:500}
+    .approach{background:var(--paper);color:var(--ink);border:0}
+    .approach .eyebrow,.approach .section-index{color:#3453cb}
+    .approach-grid{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:70px;align-items:start}
+    .approach-statement{font-size:clamp(38px,5.3vw,70px);line-height:.99;letter-spacing:-.075em;font-weight:820}
+    .approach-statement em{font-style:normal;color:#294eff}
+    .approach-copy{max-width:700px;margin:6px 0 0;color:#526078;font-size:15px;line-height:1.95}
+    .value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:54px;border-top:1px solid rgba(11,17,32,.17);border-left:1px solid rgba(11,17,32,.17)}
+    .value{min-height:168px;padding:22px 20px;border-right:1px solid rgba(11,17,32,.17);border-bottom:1px solid rgba(11,17,32,.17)}
+    .value small{color:#3453cb;font-size:9px;font-weight:850;letter-spacing:.15em}
+    .value h3{margin:17px 0 8px;font-size:17px;line-height:1.2;letter-spacing:-.04em}
+    .value p{margin:0;color:#58657a;font-size:11px;line-height:1.8}
+    .audience{background:#0b101b}
+    .audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .audience-card{position:relative;min-height:286px;overflow:hidden;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#111a2a,#0c111c)}
+    .audience-card:nth-child(2){background:linear-gradient(145deg,#1739b8,#101b4c);border-color:rgba(157,176,255,.28)}
+    .audience-card:after{content:attr(data-index);position:absolute;right:22px;bottom:-52px;color:rgba(255,255,255,.055);font-size:190px;line-height:1;font-weight:900;letter-spacing:-.12em}
+    .audience-card small{position:relative;z-index:1;color:#a9baff;font-size:9px;font-weight:800;letter-spacing:.16em}
+    .audience-card h3{position:relative;z-index:1;margin:52px 0 12px;font-size:clamp(27px,3.5vw,42px);line-height:1;letter-spacing:-.065em}
+    .audience-card p{position:relative;z-index:1;max-width:470px;margin:0;color:#bac4d4;font-size:12px;line-height:1.85}
+    .services{background:var(--bg-2)}
+    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .service-card{position:relative;display:flex;flex-direction:column;min-height:270px;padding:25px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;transition:background .25s,transform .25s var(--ease)}
+    .service-card:hover{background:rgba(38,69,158,.12)}
+    .service-meta{display:flex;align-items:center;gap:12px;color:#93a8ff}
+    .service-meta small{font-size:9px;font-weight:850;letter-spacing:.17em}
+    .service-meta i{height:1px;flex:1;background:var(--line)}
+    .service-meta b{font-size:17px;font-weight:500}
+    .service-card h3{margin:28px 0 10px;font-size:clamp(23px,3vw,34px);line-height:1.05;letter-spacing:-.06em}
+    .service-card p{max-width:510px;margin:0 0 23px;color:#aeb9ca;font-size:12px;line-height:1.85}
+    .service-card details{margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
+    .service-card summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;list-style:none;color:#edf1fb;font-size:10px;font-weight:800;letter-spacing:.06em}
+    .service-card summary::-webkit-details-marker{display:none}
+    .service-card summary span{color:#9eb0ff;font-size:18px;transition:transform .25s}
+    .service-card details[open] summary span{transform:rotate(45deg)}
+    .service-card ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;margin:16px 0 0;padding:0;list-style:none}
+    .service-card li{position:relative;padding-left:12px;color:#aab6c9;font-size:10px;line-height:1.6}
+    .service-card li:before{content:"";position:absolute;top:.66em;left:0;width:4px;height:4px;background:var(--blue-3);border-radius:50%}
+    .service-contact{align-self:flex-start;margin-top:19px;padding:7px 0;border:0;background:none;color:#c7d2ff;cursor:pointer;font-size:10px;font-weight:850}
+    .service-contact:hover{color:#fff}
+    .brand-section{background:#080c15}
+    .brand-section .section-head{margin-bottom:32px}
+    .brand-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .brand-name{display:flex;align-items:center;justify-content:center;min-height:82px;padding:18px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:#e1e7f2;text-align:center;font-size:clamp(11px,1.2vw,14px);font-weight:750;letter-spacing:-.02em;transition:background .2s,color .2s}
+    .brand-name:hover{background:#111d38;color:#fff}
+    .brand-note{margin:17px 0 0;color:#8996aa;font-size:10px;line-height:1.85}
+    .process{background:var(--blue);color:#fff;border:0}
+    .process .section-index,.process .eyebrow{color:#dbe3ff}
+    .process .section-desc{color:#e1e7ff}
+    .process-grid{display:grid;grid-template-columns:.8fr 1.2fr;border-top:1px solid rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.38)}
+    .process-tabs{padding:9px 0}
+    .process-tab{width:100%;min-height:67px;display:grid;grid-template-columns:35px 1fr 20px;align-items:center;gap:14px;padding:0 14px;border:0;border-bottom:1px solid rgba(255,255,255,.25);background:transparent;color:#d9e1ff;text-align:left;cursor:pointer}
+    .process-tab:last-child{border-bottom:0}
+    .process-tab small{font-size:9px;font-weight:850;letter-spacing:.14em}
+    .process-tab strong{font-size:14px}
+    .process-tab span{font-size:18px;opacity:.65}
+    .process-tab[aria-selected="true"]{background:#0b174f;color:#fff}
+    .process-panel{min-height:350px;padding:40px 44px;border-left:1px solid rgba(255,255,255,.38)}
+    .process-panel[hidden]{display:none}
+    .process-panel .kicker{margin:0 0 16px;color:#d9e1ff;font-size:9px;font-weight:850;letter-spacing:.16em}
+    .process-panel h3{margin:0 0 14px;font-size:clamp(32px,4.2vw,51px);line-height:1;letter-spacing:-.065em}
+    .process-panel p{max-width:590px;margin:0;color:#e5eaff;font-size:13px;line-height:1.9}
+    .process-panel ul{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 0;padding:0;list-style:none}
+    .process-panel li{padding:8px 10px;border:1px solid rgba(255,255,255,.38);border-radius:5px;font-size:9px;font-weight:750}
+    .models{background:var(--paper);color:var(--ink)}
+    .models .section-index,.models .eyebrow{color:#3453cb}
+    .model-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(11,17,32,.17);border-radius:var(--radius);overflow:hidden}
+    .model{min-height:205px;padding:27px;border-right:1px solid rgba(11,17,32,.17)}
+    .model:last-child{border-right:0}
+    .model small{color:#3453cb;font-size:9px;font-weight:850;letter-spacing:.15em}
+    .model h3{margin:27px 0 9px;font-size:clamp(25px,3.1vw,37px);line-height:1;letter-spacing:-.06em}
+    .model p{max-width:500px;margin:0;color:#536078;font-size:12px;line-height:1.85}
+    .model strong{display:inline-block;margin-top:15px;color:#101a2d;font-size:10px}
+    .pricing{background:#0b101b}
+    .pricing .section-head{margin-bottom:34px}
+    .plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+    .plan{position:relative;display:flex;flex-direction:column;min-width:0;padding:25px 23px 23px;border:1px solid var(--line-strong);border-radius:16px;background:linear-gradient(160deg,#111a2a,#0b101b)}
+    .plan.featured{border-color:#6c86ff;background:linear-gradient(160deg,#172b68,#101a35);box-shadow:0 18px 50px rgba(0,0,0,.18)}
+    .plan-badge{display:inline-flex;align-self:flex-start;margin-bottom:18px;padding:6px 8px;border-radius:4px;background:rgba(157,176,255,.12);color:#b9c7ff;font-size:8px;font-weight:850;letter-spacing:.14em}
+    .plan h3{margin:0;font-size:30px;line-height:1;letter-spacing:-.06em}
+    .plan-desc{min-height:61px;margin:12px 0 18px;color:#abb6c8;font-size:11px;line-height:1.8}
+    .plan-price{padding:17px 0;border-block:1px solid var(--line)}
+    .plan-price strong{display:block;font-size:clamp(31px,3.4vw,42px);line-height:1;letter-spacing:-.065em}
+    .plan-price span{display:block;margin-top:8px;color:#97a4b8;font-size:9px}
+    .plan-specs{margin:12px 0 21px}
+    .plan-spec{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid rgba(226,234,255,.1);font-size:10px}
+    .plan-spec span{color:#aab5c7}
+    .plan-spec b{color:#f2f4fa;text-align:right}
+    .plan .button{width:100%;margin-top:auto}
+    .pricing-note{margin:20px 0 0;color:#8f9bb0;font-size:10px;line-height:1.85}
+    .policies{background:var(--bg-2)}
+    .policy-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:start}
+    .policy-intro h2{margin:0;font-size:clamp(38px,4.7vw,61px);line-height:.98;letter-spacing:-.07em}
+    .policy-intro p{max-width:400px;margin:17px 0 0;color:#aab5c7;font-size:12px;line-height:1.9}
+    .policy-list{border-top:1px solid var(--line)}
+    .policy-list details{border-bottom:1px solid var(--line)}
+    .policy-list summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:65px;cursor:pointer;list-style:none;font-size:13px;font-weight:750}
+    .policy-list summary::-webkit-details-marker{display:none}
+    .policy-list summary span{color:#aabaff;font-size:20px;font-weight:400;transition:transform .2s}
+    .policy-list details[open] summary span{transform:rotate(45deg)}
+    .policy-content{padding:0 28px 22px 0;color:#b1bdcf;font-size:11px;line-height:1.9}
+    .policy-content p{margin:0 0 10px}
+    .policy-content ul{margin:8px 0;padding-left:17px}
+    .policy-content li{margin:5px 0}
+    .contact{overflow:hidden;background:#070a11;border-top:1px solid var(--line)}
+    .contact:before{content:"";position:absolute;left:-300px;bottom:-400px;width:730px;height:730px;background:radial-gradient(circle,rgba(36,76,255,.15),transparent 67%);pointer-events:none}
+    .contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}
+    .contact-intro h2{margin:0;font-size:clamp(44px,6vw,76px);line-height:.96;letter-spacing:-.08em}
+    .contact-intro>p{max-width:450px;margin:20px 0 0;color:#aeb9ca;font-size:13px;line-height:1.9}
+    .contact-lines{margin-top:31px;border-top:1px solid var(--line)}
+    .contact-lines a{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}
+    .contact-lines span{color:#8e9bb1;font-size:9px;font-weight:850;letter-spacing:.12em}
+    .contact-form{padding:28px;border:1px solid rgba(112,139,255,.48);border-radius:16px;background:rgba(16,24,39,.86);box-shadow:0 20px 70px rgba(0,0,0,.22)}
+    .contact-form h3{margin:0 0 8px;font-size:25px;letter-spacing:-.05em}
+    .contact-form>p{margin:0 0 21px;color:#9eabc0;font-size:11px;line-height:1.8}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px;min-width:0}
+    .field.full{grid-column:1/-1}
+    .field label{color:#b8c6e7;font-size:9px;font-weight:850;letter-spacing:.12em}
+    .field input,.field select,.field textarea{width:100%;min-height:48px;padding:12px 13px;border:1px solid #3a4965;border-radius:7px;background:#080d17;color:#f4f6fb;font-size:12px;outline:0}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#91a8ff;box-shadow:0 0 0 3px rgba(84,116,255,.12)}
+    .field input::placeholder,.field textarea::placeholder{color:#74829a}
+    .field textarea{min-height:104px;resize:vertical}
+    .submit{width:100%;min-height:51px;margin-top:15px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;cursor:pointer;transition:background .2s,transform .2s}
+    .submit:hover{background:#3d60ff;transform:translateY(-2px)}
+    .form-status{min-height:20px;margin:10px 0 0;color:#c1ceff;font-size:10px}
+    .privacy-note{margin:10px 0 0;color:#8492a9;font-size:9px;line-height:1.7}
+    .footer{border-top:1px solid var(--line);background:#06080d;padding:27px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-brand{display:flex;align-items:center;gap:11px;color:#f2f4fa;font-size:12px;font-weight:900;letter-spacing:.08em}
+    .footer-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:7px;background:var(--blue);font-size:16px}
+    .footer-meta{color:#7f8ba0;font-size:9px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px;color:#aab4c6;font-size:9px}
+    .whatsapp-float{position:fixed;z-index:90;right:22px;bottom:22px;display:flex;align-items:center;gap:9px;padding:12px 16px;border:1px solid rgba(255,255,255,.2);border-radius:100px;background:#0c1730;box-shadow:0 10px 35px rgba(0,0,0,.3);color:#fff;font-size:10px;font-weight:850;transition:transform .2s,background .2s}
+    .whatsapp-float:hover{transform:translateY(-3px);background:#14285a}
+    .whatsapp-dot{width:8px;height:8px;border-radius:50%;background:#6ee7a8;box-shadow:0 0 0 4px rgba(110,231,168,.13)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--delay,0ms)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .process-panel.enter{animation:panelIn .35s var(--ease) both}
+    @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:1020px){.nav{gap:13px}.nav a{font-size:9px}.hero-grid{grid-template-columns:1fr  .9fr;gap:30px}.hero-art{min-height:430px}.policy-layout,.contact-grid{gap:42px}.plan{padding:22px 18px}}
+    @media(max-width:780px){
+      :root{--gutter:20px}
+      html{scroll-padding-top:76px}
+      .topbar{height:68px}
+      .logo{width:112px}
+      .nav{display:none}
+      .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .mobile-nav{position:fixed;z-index:101;top:68px;left:0;right:0;padding:12px var(--gutter) 20px;background:#070a11;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+      .mobile-nav.open{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;animation:panelIn .25s var(--ease) both}
+      .mobile-nav a{padding:13px 0;border-bottom:1px solid var(--line);color:#e7ebf4;font-size:12px;font-weight:750}
+      .mobile-nav a:last-child{color:#aebfff}
+      .hero{padding-top:47px}
+      .hero-grid{grid-template-columns:1fr;gap:36px}
+      .hero h1{font-size:clamp(48px,10.5vw,78px)}
+      .hero-intro{font-size:13px;margin-top:20px}
+      .hero-art{min-height:390px}
+      .art-v{font-size:clamp(230px,54vw,340px)}
+      .approach-grid{grid-template-columns:1fr;gap:22px}
+      .approach-copy{font-size:13px}
+      .section-head{grid-template-columns:1fr;gap:15px;margin-bottom:30px}
+      .section-desc{font-size:12px}
+      .value-grid{grid-template-columns:1fr 1fr;margin-top:34px}
+      .value{min-height:150px;padding:17px}
+      .audience-grid{grid-template-columns:1fr}
+      .audience-card{min-height:235px;padding:24px}
+      .audience-card h3{margin-top:37px}
+      .service-grid{grid-template-columns:1fr}
+      .service-card{min-height:0;padding:21px 18px}
+      .service-card h3{margin-top:21px;font-size:27px}
+      .brand-board{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .brand-name{min-height:67px;font-size:11px}
+      .process-grid{grid-template-columns:1fr}
+      .process-tab{min-height:56px}
+      .process-panel{min-height:0;padding:26px 20px;border-left:0;border-top:1px solid rgba(255,255,255,.38)}
+      .process-panel h3{font-size:36px}
+      .models .section-head{margin-bottom:25px}
+      .model-grid{grid-template-columns:1fr}
+      .model{min-height:0;padding:22px;border-right:0;border-bottom:1px solid rgba(11,17,32,.17)}
+      .model:last-child{border-bottom:0}
+      .plan-grid{grid-template-columns:1fr;gap:13px}
+      .plan{padding:23px 20px}
+      .plan-desc{min-height:0}
+      .policy-layout{grid-template-columns:1fr;gap:28px}
+      .policy-intro p{font-size:11px}
+      .contact-grid{grid-template-columns:1fr;gap:30px}
+      .contact-intro h2{font-size:clamp(42px,10vw,62px)}
+      .contact-form{padding:22px 17px}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .whatsapp-float{right:14px;bottom:14px;padding:12px}
+      .whatsapp-float .float-text{display:none}
+    }
+    @media(max-width:420px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:1}.value-grid{grid-template-columns:1fr}.service-card ul{grid-template-columns:1fr}.hero-actions .button{flex:1}.hero-art{min-height:330px}.art-band{height:72px}.art-card{width:128px;right:7%;bottom:61px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.ticker-track{animation:none}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#anasayfa" aria-label="Vizart Medya ana sayfa"><img src="data:image/png;base64,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" alt="Vizart Medya"></a>
+      <nav class="nav" aria-label="Ana menü">
+        <a href="#yaklasim">Yaklaşım</a><a href="#hizmetler">Hizmetler</a><a href="#markalar">Deneyim</a><a href="#surec">Süreç</a><a href="#paketler">Paketler</a><a href="#kosullar">Koşullar</a><a class="nav-cta" href="#iletisim">Projenizi konuşalım ↗</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileNav">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobil menü">
+    <a href="#yaklasim">Yaklaşım</a><a href="#hizmetler">Hizmetler</a><a href="#markalar">Marka deneyimi</a><a href="#surec">Çalışma süreci</a><a href="#paketler">Paketler</a><a href="#kosullar">Çalışma koşulları</a><a href="#iletisim">İletişim ↗</a>
+  </nav>
+  <main id="icerik">
+    <section class="hero" id="anasayfa">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Vizart Medya · Yaratıcı dijital ajans</p>
+          <h1>Fikirden yayına,<span class="accent">tek yaratıcı ekip.</span></h1>
+          <p class="hero-intro">Markanızın dijital iletişimini yalnızca paylaşım yapmak olarak görmüyoruz. Strateji, tasarım, fotoğraf-video prodüksiyonu ve Meta reklamlarını aynı hedef doğrultusunda bir araya getiriyoruz.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#iletisim">Projenizi anlatın <span class="arrow">↗</span></a>
+            <a class="button button-quiet" href="#hizmetler">Hizmetleri keşfedin <span class="arrow">↓</span></a>
+          </div>
+          <div class="hero-proof" aria-label="Çalışma yaklaşımı">
+            <span>Markaya özel üretim</span><span>Planlı çalışma</span><span>Şeffaf kapsam</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Vizart Medya'nın strateji, tasarım ve prodüksiyon yaklaşımını temsil eden özgün grafik" role="img">
+          <div class="art-top"><span>STRATEJİ / TASARIM / ÜRETİM</span><span>V. — 01</span></div>
+          <div class="art-v">V.</div><div class="art-orbit"></div>
+          <div class="art-band"><span>MARKANIZIN DİJİTAL İMZASI</span></div>
+          <div class="art-card"><small>İÇERİK SİSTEMİ</small><strong>Fikir<br>→ Etki</strong><i></i></div>
+          <div class="art-bottom"><span>VİZART MEDYA</span><span>YARATICI / DİJİTAL</span></div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker" aria-label="Hizmet alanları">
+      <div class="ticker-track" aria-hidden="true">
+        <span>Sosyal medya <b>✳</b></span><span>Grafik tasarım <b>✳</b></span><span>Fotoğraf ve video <b>✳</b></span><span>Reels prodüksiyonu <b>✳</b></span><span>Meta reklamları <b>✳</b></span><span>Marka kimliği <b>✳</b></span><span>Web tasarımı</span>
+      </div>
+    </div>
+    <section class="section approach" id="yaklasim">
+      <div class="wrap">
+        <p class="eyebrow">01 / Yaklaşımımız</p>
+        <div class="approach-grid">
+          <h2 class="approach-statement">Görünür olmak başlangıç. <em>Hatırlanmak</em> asıl mesele.</h2>
+          <p class="approach-copy">Vizart Medya; markaların dijitalde tutarlı, yaratıcı ve hedefe yönelik bir iletişim kurmasına yardımcı olur. Önce markanızı ve kitlenizi tanır, ardından ihtiyaca uygun bir yol haritası oluştururuz. Tasarımdan çekime, içerikten reklam yönetimine kadar üretimi tek bir bütün olarak ele alırız.</p>
+        </div>
+        <div class="value-grid">
+          <article class="value"><small>01 / TASARIM</small><h3>Markaya özgü görsel dil</h3><p>Hazır kalıplar yerine markanızın karakterini yansıtan yaratıcı tasarımlar.</p></article>
+          <article class="value"><small>02 / STRATEJİ</small><h3>Hedefi belli planlama</h3><p>İçerik ve reklam kararlarını markanızın ihtiyaçları ve hedef kitlesi doğrultusunda planlama.</p></article>
+          <article class="value"><small>03 / ÜRETİM</small><h3>Tek ekip, tutarlı üretim</h3><p>Tasarım, çekim, kurgu ve yayın süreçlerini birbiriyle uyumlu yürütme.</p></article>
+          <article class="value"><small>04 / İLETİŞİM</small><h3>Yakın iş birliği</h3><p>Onay ve geri bildirim adımlarını açık tutan, doğrudan iletişime dayalı çalışma.</p></article>
+          <article class="value"><small>05 / ŞEFFAFLIK</small><h3>Baştan net kapsam</h3><p>Hizmet kapsamını, teslimleri, revizyonları ve ek ücretleri işe başlamadan konuşma.</p></article>
+          <article class="value"><small>06 / GELİŞİM</small><h3>Takip ve değerlendirme</h3><p>Yapılan çalışmaları belirlenen ölçütlerle izleme ve sonraki adımları veriye göre iyileştirme.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section audience" id="hedef-kitle">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">02 / Kimlerle çalışıyoruz?</span><h2 class="section-title">Farklı ölçekler.<br>Aynı özen.</h2></div><p class="section-desc">Her markanın ihtiyacı farklıdır. Üretim planını işletmenizin ölçeğine, hedeflerine, sektörüne ve çalışma kapsamına göre şekillendiririz.</p></div>
+        <div class="audience-grid">
+          <article class="audience-card" data-index="01"><small>01 / YEREL İŞLETMELER</small><h3>Yerel işletmeler</h3><p>Kafeler, restoranlar, güzellik salonları, kuaförler, emlak ofisleri, eğitim kurumları ve çevresindeki toplulukla güçlü bağ kurmak isteyen işletmeler.</p></article>
+          <article class="audience-card" data-index="02"><small>02 / KURUMSAL MARKALAR</small><h3>Kurumsal firmalar</h3><p>İnşaat, teknoloji, yazılım, eğitim ve farklı sektörlerde faaliyet gösteren; marka iletişimini daha tutarlı ve profesyonel yürütmek isteyen şirketler.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section services" id="hizmetler">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">03 / Hizmet alanları</span><h2 class="section-title">İhtiyaç duyduğunuz<br>üretim, tek çatı altında.</h2></div><p class="section-desc">Tek bir hizmetle başlayabilir veya farklı üretim alanlarını ortak bir plan içinde birleştirebilirsiniz. Her işin kapsamı, ihtiyaçlar netleştirildikten sonra belirlenir.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-meta"><small>01</small><i></i><b>↗</b></div><h3>Sosyal Medya Yönetimi</h3><p>Strateji ve aylık içerik takviminden hesap yönetimi, yayın ve performans raporlamasına kadar.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Sosyal medya stratejisi</li><li>Aylık içerik takvimi</li><li>Instagram ve Facebook hesap yönetimi</li><li>İçerik planlama ve paylaşım</li><li>Açıklama metinleri</li><li>Hesap düzeni ve içerik bütünlüğü</li><li>Performans takibi ve raporlama</li></ul></details><button class="service-contact" type="button" data-service="Sosyal Medya Yönetimi">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>02</small><i></i><b>↗</b></div><h3>Grafik Tasarım</h3><p>Dijital ve basılı mecralarda markanızın görsel dilini güçlendiren özgün tasarımlar.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Sosyal medya gönderi ve hikâye tasarımları</li><li>Reklam görselleri</li><li>Dijital afiş ve banner</li><li>Broşür, katalog ve menü</li><li>Basılı materyaller</li><li>Kampanya ve tanıtım görselleri</li><li>Markaya özel kreatif tasarımlar</li></ul></details><button class="service-contact" type="button" data-service="Grafik Tasarım">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>03</small><i></i><b>↗</b></div><h3>Fotoğraf ve Video Çekimi</h3><p>Ürün, mekân, işletme ve kurumsal iletişim ihtiyaçlarına yönelik profesyonel çekimler.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Ürün fotoğrafçılığı</li><li>Mekân ve işletme çekimleri</li><li>Kurumsal fotoğraf çekimleri</li><li>Tanıtım videoları</li><li>Sosyal medya video çekimleri</li><li>Profesyonel ışık ve kamera kullanımı</li></ul></details><button class="service-contact" type="button" data-service="Fotoğraf ve Video Çekimi">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>04</small><i></i><b>↗</b></div><h3>Reels ve Video Prodüksiyonu</h3><p>Kısa ve uzun format video içeriklerinin fikir, kurgu ve düzenleme süreçleri.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Reels içerik üretimi</li><li>Kısa video kurgusu</li><li>Tanıtım ve reklam videoları</li><li>Video montajı</li><li>Renk düzenleme</li><li>Ses düzenleme</li><li>Uzun format video prodüksiyonu</li></ul></details><button class="service-contact" type="button" data-service="Reels ve Video Prodüksiyonu">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>05</small><i></i><b>↗</b></div><h3>Meta Reklam Yönetimi</h3><p>Instagram ve Facebook reklamlarının strateji, hedefleme, optimizasyon ve raporlama süreçleri.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Instagram reklam yönetimi</li><li>Facebook reklam yönetimi</li><li>Reklam stratejisi</li><li>Hedef kitle belirleme</li><li>Kampanya oluşturma</li><li>Kampanya optimizasyonu</li><li>Performans analizi ve raporlama</li></ul></details><button class="service-contact" type="button" data-service="Meta Reklam Yönetimi">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>06</small><i></i><b>↗</b></div><h3>Kurumsal Kimlik ve Logo</h3><p>Markanızın farklı temas noktalarında tutarlı görünmesini sağlayan kimlik tasarımı.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Logo tasarımı</li><li>Kurumsal renk paleti</li><li>Tipografi ve görsel dil</li><li>Marka kimliği çalışmaları</li><li>Kartvizit ve kurumsal evrak</li><li>Farklı mecralara uygulama</li></ul></details><button class="service-contact" type="button" data-service="Kurumsal Kimlik ve Logo Tasarımı">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>07</small><i></i><b>↗</b></div><h3>Web Sitesi Tasarımı ve Geliştirme</h3><p>Markanızın ihtiyaçlarına uygun, mobil uyumlu ve kullanıcı deneyimini gözeten web arayüzleri.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Kurumsal web sitesi tasarımı</li><li>Mobil uyumlu arayüzler</li><li>Web sitesi geliştirme</li><li>Kullanıcı deneyimi odaklı tasarım</li><li>Projeye özel dijital çözümler</li></ul></details><button class="service-contact" type="button" data-service="Web Sitesi Tasarımı ve Geliştirme">Bu hizmeti konuşalım ↗</button></article>
+          <article class="service-card"><div class="service-meta"><small>08</small><i></i><b>↗</b></div><h3>Marka Danışmanlığı ve Strateji</h3><p>Marka, hedef kitle ve rakip analizinden dijital iletişim yaklaşımının oluşturulmasına kadar.</p><details><summary>Hizmet kapsamı <span>+</span></summary><ul><li>Marka analizi</li><li>Hedef kitle analizi</li><li>Rakip analizi</li><li>Marka konumlandırma</li><li>Dijital iletişim stratejisi</li><li>İçerik ve reklam stratejisi</li><li>Markaya özel gelişim planı</li></ul></details><button class="service-contact" type="button" data-service="Marka Danışmanlığı ve Strateji">Bu hizmeti konuşalım ↗</button></article>
+        </div>
+      </div>
+    </section>
+    <section class="section brand-section" id="markalar">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">04 / Marka deneyimi</span><h2 class="section-title">Farklı sektörlerden<br>iş ve iş birlikleri.</h2></div><p class="section-desc">Farklı sektörlerde edinilen deneyim, her markanın dilini ve ihtiyacını daha hızlı anlamamıza yardımcı oluyor.</p></div>
+        <div class="brand-board" aria-label="Önceki proje ve iş birliklerinden marka ve kurum isimleri">
+          <div class="brand-name">Nilüfer Kafe</div><div class="brand-name">RobilTech</div><div class="brand-name">Mustafa Renan Beauty Lounge</div><div class="brand-name">Kolektif Eğitim Kurumu</div>
+          <div class="brand-name">EGEFEN Eğitim Kurumları</div><div class="brand-name">Reform Aydın Mühendislik</div><div class="brand-name">Akçay İnşaat</div><div class="brand-name">Faruk Karasoy Hair Designer</div>
+          <div class="brand-name">Doç. Dr. Gülşen Ünlü</div><div class="brand-name">Prizma Dershanesi</div><div class="brand-name">FourFood</div><div class="brand-name">Elit Emlak</div>
+          <div class="brand-name">Hasan Er · @hasanerdiyebiri</div><div class="brand-name">Matrakam</div>
+        </div>
+        <p class="brand-note">Şeffaflık notu: Bu isimlerin bir bölümü ajans kurulmadan önce bireysel olarak veya farklı ajansların bünyesinde yürütülen çalışmalardan gelmektedir. Listelenen her çalışma Vizart Medya adı altında gerçekleştirilmiş değildir. Proje bağlamı ve kullanım hakları gözetilir.</p>
+      </div>
+    </section>
+    <section class="section process" id="surec">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">05 / Çalışma süreci</span><h2 class="section-title">İlk görüşmeden yayına,<br>adım adım.</h2></div><p class="section-desc">Süreç boyunca neyin, neden ve hangi aşamada yapıldığını bilirsiniz. Her proje ihtiyaçlara göre planlanır.</p></div>
+        <div class="process-grid">
+          <div class="process-tabs" role="tablist" aria-label="Çalışma aşamaları">
+            <button class="process-tab" type="button" role="tab" aria-selected="true" aria-controls="processPanel0" id="processTab0"><small>01</small><strong>Tanışma ve ihtiyaç</strong><span>↗</span></button>
+            <button class="process-tab" type="button" role="tab" aria-selected="false" aria-controls="processPanel1" id="processTab1"><small>02</small><strong>Analiz</strong><span>↗</span></button>
+            <button class="process-tab" type="button" role="tab" aria-selected="false" aria-controls="processPanel2" id="processTab2"><small>03</small><strong>Strateji ve plan</strong><span>↗</span></button>
+            <button class="process-tab" type="button" role="tab" aria-selected="false" aria-controls="processPanel3" id="processTab3"><small>04</small><strong>Üretim ve onay</strong><span>↗</span></button>
+            <button class="process-tab" type="button" role="tab" aria-selected="false" aria-controls="processPanel4" id="processTab4"><small>05</small><strong>Yayın ve raporlama</strong><span>↗</span></button>
+          </div>
+          <div class="process-panels">
+            <article class="process-panel" role="tabpanel" id="processPanel0" aria-labelledby="processTab0"><p class="kicker">AŞAMA 01 / 05</p><h3>Önce sizi dinliyoruz.</h3><p>İşletmenizi, beklentilerinizi, hedeflerinizi ve marka vizyonunuzu anlamak için bir araya geliyoruz.</p><ul><li>İhtiyaçların dinlenmesi</li><li>Beklentilerin netleştirilmesi</li><li>Marka vizyonunun anlaşılması</li></ul></article>
+            <article class="process-panel" role="tabpanel" id="processPanel1" aria-labelledby="processTab1" hidden><p class="kicker">AŞAMA 02 / 05</p><h3>Mevcut durumu inceliyoruz.</h3><p>Faaliyet alanınızı, hedef kitlenizi, mevcut dijital kanallarınızı ve rakiplerinizi değerlendiriyoruz.</p><ul><li>Sektör ve rakip analizi</li><li>Hedef kitle değerlendirmesi</li><li>Mevcut dijital görünüm</li></ul></article>
+            <article class="process-panel" role="tabpanel" id="processPanel2" aria-labelledby="processTab2" hidden><p class="kicker">AŞAMA 03 / 05</p><h3>Yol haritasını oluşturuyoruz.</h3><p>Analizden çıkan ihtiyaçlara göre içerik, tasarım, iletişim ve reklam planını netleştiriyoruz.</p><ul><li>İçerik planlaması</li><li>İletişim yaklaşımı</li><li>Reklam stratejisi</li></ul></article>
+            <article class="process-panel" role="tabpanel" id="processPanel3" aria-labelledby="processTab3" hidden><p class="kicker">AŞAMA 04 / 05</p><h3>Üretiyor ve onayınıza sunuyoruz.</h3><p>İçerikler, grafik tasarımlar, fotoğraflar ve videolar hazırlanır. Yayına alınmadan önce değerlendirmeniz ve onayınız alınır.</p><ul><li>İçerik üretimi</li><li>Tasarım ve prodüksiyon</li><li>Müşteri değerlendirmesi ve onayı</li></ul></article>
+            <article class="process-panel" role="tabpanel" id="processPanel4" aria-labelledby="processTab4" hidden><p class="kicker">AŞAMA 05 / 05</p><h3>Yayınlıyor ve takip ediyoruz.</h3><p>Onaylanan içerikler planlanan takvime göre yayımlanır. Çalışmaların performansı izlenir ve kapsam dahilindeki raporlamalar paylaşılır.</p><ul><li>Planlı yayın</li><li>Performans takibi</li><li>Raporlama</li></ul></article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section models" id="calisma-modeli">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">06 / Çalışma modelleri</span><h2 class="section-title">İşin yapısına uygun<br>birliktelik.</h2></div><p class="section-desc">Düzenli iletişim ve içerik üretimi için aylık çalışma; sınırları belirli teslimler için proje bazlı model.</p></div>
+        <div class="model-grid">
+          <article class="model"><small>01 / AYLIK HİZMET</small><h3>Aylık hizmet anlaşmaları</h3><p>Sosyal medya yönetimi, içerik üretimi, çekim, Meta reklam yönetimi ve raporlama gibi düzenli hizmetler aylık paketler üzerinden yürütülür.</p><strong>Asgari çalışma süresi: 1 ay</strong></article>
+          <article class="model"><small>02 / PROJE BAZLI</small><h3>Proje bazlı çalışmalar</h3><p>Logo ve kurumsal kimlik, web sitesi, özel fotoğraf-video çekimi, katalog ve benzeri tekil işler belirlenen teslim kapsamına göre planlanır.</p><strong>Fiyat, iş kapsamına göre özel teklifle belirlenir.</strong></article>
+        </div>
+      </div>
+    </section>
+    <section class="section pricing" id="paketler">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-index">07 / Aylık sosyal medya yönetimi</span><h2 class="section-title">Kapsamı belli.<br>Fiyatı şeffaf.</h2></div><p class="section-desc">Üç farklı paket; Instagram ve Facebook yönetimi, içerik üretimi, çekim ve Meta reklam yönetimini kapsar. İhtiyacınıza uyan paketi seçin, ayrıntıları birlikte netleştirelim.</p></div>
+        <div class="plan-grid">
+          <article class="plan"><span class="plan-badge">01 / TEMEL KAPSAM</span><h3>Başlangıç</h3><p class="plan-desc">Düzenli dijital görünürlük oluşturmak ve sosyal medya hesaplarını profesyonel biçimde yönetmek isteyen işletmeler için.</p><div class="plan-price"><strong>10.000 TL</strong><span>Aylık hizmet bedeli · KDV hariç</span></div><div class="plan-specs"><div class="plan-spec"><span>Reels</span><b>4</b></div><div class="plan-spec"><span>Gönderi</span><b>4</b></div><div class="plan-spec"><span>Hikâye</span><b>5</b></div><div class="plan-spec"><span>Çekim</span><b>1 gün / 4 saat</b></div><div class="plan-spec"><span>Raporlama</span><b>Temel</b></div><div class="plan-spec"><span>Strateji toplantısı</span><b>—</b></div></div><button class="button" type="button" data-plan="Başlangıç">Paketi değerlendirin <span class="arrow">↗</span></button></article>
+          <article class="plan featured"><span class="plan-badge">02 / DAHA YOĞUN ÜRETİM</span><h3>Profesyonel</h3><p class="plan-desc">Daha yoğun içerik üretimi ve düzenli dijital iletişim ihtiyacı bulunan markalar için.</p><div class="plan-price"><strong>20.000 TL</strong><span>Aylık hizmet bedeli · KDV hariç</span></div><div class="plan-specs"><div class="plan-spec"><span>Reels</span><b>8</b></div><div class="plan-spec"><span>Gönderi</span><b>8</b></div><div class="plan-spec"><span>Hikâye</span><b>10</b></div><div class="plan-spec"><span>Çekim</span><b>2 gün / 8 saat</b></div><div class="plan-spec"><span>Raporlama</span><b>Detaylı</b></div><div class="plan-spec"><span>Strateji toplantısı</span><b>—</b></div></div><button class="button button-primary" type="button" data-plan="Profesyonel">Paketi değerlendirin <span class="arrow">↗</span></button></article>
+          <article class="plan"><span class="plan-badge">03 / KAPSAMLI ÜRETİM</span><h3>Premium</h3><p class="plan-desc">Daha kapsamlı ve yoğun sosyal medya iletişimi yürütmek isteyen markalar için.</p><div class="plan-price"><strong>30.000 TL</strong><span>Aylık hizmet bedeli · KDV hariç</span></div><div class="plan-specs"><div class="plan-spec"><span>Reels</span><b>10</b></div><div class="plan-spec"><span>Gönderi</span><b>12</b></div><div class="plan-spec"><span>Hikâye</span><b>15</b></div><div class="plan-spec"><span>Çekim</span><b>3 gün / 12 saat</b></div><div class="plan-spec"><span>Raporlama</span><b>Detaylı</b></div><div class="plan-spec"><span>Strateji toplantısı</span><b>Dahil</b></div></div><button class="button" type="button" data-plan="Premium">Paketi değerlendirin <span class="arrow">↗</span></button></article>
+        </div>
+        <p class="pricing-note">Üç pakette de Instagram ve Facebook hesap yönetimi, Meta reklam yönetimi, içerik planlama, paylaşım ve açıklama metinleri dahildir. Reels, gönderi ve hikâye adetleri iki platformun toplamıdır; aynı içerikler uygun olduğu ölçüde her iki platformda paylaşılır. Meta reklam bütçesi paket ücretine dahil değildir ve müşteri tarafından ayrıca karşılanır. DM ve yorum yanıtlama hizmeti paketlere dahil değildir.</p>
+      </div>
+    </section>
+    <section class="section policies" id="kosullar">
+      <div class="wrap policy-layout">
+        <div class="policy-intro"><p class="eyebrow">08 / Çalışma koşulları</p><h2>İşe başlamadan<br>önce her şey net.</h2><p>Paket kapsamı, çekim süresi, ek içerik, revizyon, ödeme ve raporlama koşulları açıkça belirtilir. Böylece iki taraf da işin sınırlarını bilir.</p></div>
+        <div class="policy-list">
+          <details><summary>Sosyal medya yönetimi <span>+</span></summary><div class="policy-content"><p>Aylık paketlerde Instagram ve Facebook hesapları birlikte yönetilir. Reels, gönderi ve hikâye adetleri iki platformun toplamına yöneliktir; aynı içerikler uygun olduğu ölçüde her iki platformda paylaşılır.</p><p>DM ve yorum yanıtlama aylık paketlere dahil değildir; talep edilirse ayrıca ücretlendirilir.</p></div></details>
+          <details><summary>Meta reklam yönetimi <span>+</span></summary><div class="policy-content"><p>Meta reklam yönetimi üç pakete de dahildir ve kapsamı aynıdır. Hizmet; hedefleme, kampanya kurulumu, takip, optimizasyon ve raporlamayı kapsar.</p><p>Reklam bütçesi ajans hizmet bedeline dahil değildir; platforma ödenen bütçe müşteri tarafından ayrıca karşılanır. Reklam içerikleri mevcut paket adetleri kapsamında hazırlanır; sınırsız ek üretim hakkı oluşturmaz.</p></div></details>
+          <details><summary>Çekim ve prodüksiyon <span>+</span></summary><div class="policy-content"><p>Aylık paketlerin tamamında fotoğraf ve video çekimi bulunur. Bir çekim günü 4 saattir. Başlangıç paketinde ayda 1 gün / 4 saat, Profesyonel pakette 2 gün / 8 saat, Premium pakette 3 gün / 12 saat çekim yapılır.</p><p>Paket dışı profesyonel çekim 1.500 TL / saat olarak ücretlendirilir; temel fotoğraf düzenleme dahildir. Video kurgu ayrıca ücretlendirilir. Uzun format video prodüksiyonu özel teklifle fiyatlandırılır.</p></div></details>
+          <details><summary>Ek içerik ücretleri <span>+</span></summary><div class="policy-content"><ul><li>Ek gönderi tasarımı: 500 TL</li><li>Ek hikâye tasarımı: 250 TL</li><li>Ek Reels / kısa video kurgusu: 500 TL</li><li>Ek profesyonel çekim: 1.500 TL / saat</li><li>Uzun video kurgusu: özel teklif</li></ul><p>Ek Reels kurgu ücreti, yeni çekim yapılmadan mevcut görüntülerle hazırlanan videolar için geçerlidir. Yeni çekim gerekiyorsa çekim hizmeti ayrıca ücretlendirilir.</p></div></details>
+          <details><summary>Revizyon politikası <span>+</span></summary><div class="policy-content"><p>Hazırlanan her görsel ve video içeriği için 1 ücretsiz revizyon hakkı bulunur. İlk ücretsiz revizyondan sonraki ek revizyonlar; görsel tasarım için 250 TL, video / Reels için 500 TL olarak ücretlendirilir.</p></div></details>
+          <details><summary>Ödeme koşulları <span>+</span></summary><div class="policy-content"><p><strong>Aylık hizmet paketleri:</strong> Ödemenin %50’si ay başında, %50’si ay sonunda yapılır. Örneğin 20.000 TL tutarındaki Profesyonel Paket için ay başında 10.000 TL, ay sonunda 10.000 TL hizmet bedeli ödenir. Tutarlar KDV hariçtir.</p><p><strong>Proje bazlı hizmetler:</strong> Ödemenin %50’si proje başlangıcında, %50’si proje tesliminde yapılır. Proje fiyatı, işin kapsamı belirlendikten sonra sunulur.</p></div></details>
+          <details><summary>Raporlama ve fiyatlandırma <span>+</span></summary><div class="policy-content"><p>Başlangıç paketinde temel performans raporlaması; Profesyonel ve Premium paketlerde detaylı sosyal medya ve reklam performans raporlaması sunulur. Premium pakete ayrıca strateji toplantısı dahildir.</p><p>Paket fiyatları KDV hariçtir ve gerektiğinde değişiklik gösterebilir. Proje bazlı hizmetlerin fiyatı, kapsam ve müşteri ihtiyaçlarına göre özel teklifle belirlenir.</p></div></details>
+        </div>
+      </div>
+    </section>
+    <section class="section contact" id="iletisim">
+      <div class="wrap contact-grid">
+        <div class="contact-intro"><p class="eyebrow">09 / İletişim</p><h2>Bir fikriniz mi var?<br>Konuşalım.</h2><p>İhtiyacınızı ve hedefinizi kısaca paylaşın. Projenizin kapsamını birlikte değerlendirelim; size uygun çalışma modelini netleştirelim.</p>
+          <div class="contact-lines"><a href="tel:+905051262360"><span>TELEFON / WHATSAPP</span>+90 505 126 23 60 ↗</a><a href="mailto:infovizartmedya@gmail.com"><span>E-POSTA</span>infovizartmedya@gmail.com ↗</a><a href="https://www.instagram.com/vizartmedya/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span>@vizartmedya ↗</a></div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <h3>Projenizi anlatın</h3><p>Bilgileri doldurun; mesajınız WhatsApp üzerinden hazır hâle gelsin.</p>
+          <div class="form-grid">
+            <div class="field"><label for="clientName">ADINIZ</label><input id="clientName" name="name" autocomplete="name" placeholder="Adınız ve soyadınız" required></div>
+            <div class="field"><label for="clientContact">İLETİŞİM BİLGİNİZ</label><input id="clientContact" name="contact" autocomplete="tel" placeholder="Telefon veya e-posta" required></div>
+            <div class="field full"><label for="chosenService">İLGİLENDİĞİNİZ HİZMET</label><select id="chosenService" name="service" required><option value="">Hizmet seçin</option><option>Sosyal Medya Yönetimi</option><option>Grafik Tasarım</option><option>Fotoğraf ve Video Çekimi</option><option>Reels ve Video Prodüksiyonu</option><option>Meta Reklam Yönetimi</option><option>Kurumsal Kimlik ve Logo Tasarımı</option><option>Web Sitesi Tasarımı ve Geliştirme</option><option>Marka Danışmanlığı ve Strateji</option><option>Aylık Sosyal Medya Yönetimi — Başlangıç Paketi</option><option>Aylık Sosyal Medya Yönetimi — Profesyonel Paketi</option><option>Aylık Sosyal Medya Yönetimi — Premium Paketi</option><option>Birden fazla hizmet / Proje bazlı çalışma</option></select></div>
+            <div class="field full"><label for="clientMessage">PROJE HAKKINDA</label><textarea id="clientMessage" name="message" placeholder="İhtiyacınızı, hedefinizi veya aklınızdaki fikri kısaca anlatın."></textarea></div>
+          </div>
+          <button class="submit" type="submit">WHATSAPP MESAJI OLUŞTUR <span>↗</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="privacy-note">Bu form bilgileri web sitesinde depolamaz. Gönderdiğinizde, yazdığınız bilgilerle bir WhatsApp mesajı hazırlanır; mesajı WhatsApp üzerinden siz gönderirsiniz.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><div class="footer-brand"><span class="footer-mark">V.</span> VİZART MEDYA</div><p class="footer-meta">© <span id="year">2026</span> Vizart Medya. Tüm hakları saklıdır.</p></div><div class="footer-links"><a href="#anasayfa">Başa dön ↑</a><a href="#hizmetler">Hizmetler</a><a href="#paketler">Paketler</a><a href="#iletisim">İletişim</a></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/905051262360" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden Vizart Medya ile iletişime geç"><span class="whatsapp-dot"></span><span class="float-text">WhatsApp’tan yazın</span><span aria-hidden="true">↗</span></a>
+  <script>
+  (()=>{
+    const menuButton=document.getElementById('menuToggle');
+    const mobileNav=document.getElementById('mobileNav');
+    const closeMenu=()=>{mobileNav?.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');menuButton?.setAttribute('aria-label','Menüyü aç');if(menuButton)menuButton.textContent='☰';document.body.classList.remove('menu-open');};
+    menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');menuButton.textContent=open?'×':'☰';mobileNav?.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);});
+    mobileNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+
+    const tabs=[...document.querySelectorAll('.process-tab')];
+    const panels=[...document.querySelectorAll('.process-panel')];
+    const selectStep=index=>{tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.setAttribute('tabindex',i===index?'0':'-1');});panels.forEach((panel,i)=>{panel.hidden=i!==index;if(i===index){panel.classList.remove('enter');void panel.offsetWidth;panel.classList.add('enter');}});};
+    tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectStep(index));tab.addEventListener('keydown',e=>{let next=index;if(e.key==='ArrowDown'||e.key==='ArrowRight')next=(index+1)%tabs.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();selectStep(next);tabs[next].focus();});});
+    tabs.forEach((tab,i)=>tab.setAttribute('tabindex',i===0?'0':'-1'));
+
+    const serviceSelect=document.getElementById('chosenService');
+    const contact=document.getElementById('iletisim');
+    const goToContact=value=>{if(serviceSelect&&value){let option=[...serviceSelect.options].find(o=>o.value===value||o.text===value);if(!option){option=document.createElement('option');option.value=value;option.textContent=value;serviceSelect.append(option);}serviceSelect.value=option.value;}contact?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(()=>document.getElementById('clientName')?.focus({preventScroll:true}),350);};
+    document.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>goToContact(btn.dataset.service)));
+    document.querySelectorAll('[data-plan]').forEach(btn=>btn.addEventListener('click',()=>goToContact('Aylık Sosyal Medya Yönetimi — '+btn.dataset.plan+' Paketi')));
+
+    const form=document.getElementById('contactForm');
+    form?.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const name=document.getElementById('clientName').value.trim();const contactInfo=document.getElementById('clientContact').value.trim();const service=serviceSelect.value;const message=document.getElementById('clientMessage').value.trim();const text=['Merhaba Vizart Medya,','',`Ad: ${name}`,`İletişim: ${contactInfo}`,`Hizmet: ${service}`,`Proje hakkında: ${message||'Henüz belirtilmedi.'}`].join('\n');const url='https://wa.me/905051262360?text='+encodeURIComponent(text);const opened=window.open(url,'_blank');if(opened)opened.opener=null;const status=document.getElementById('formStatus');status.textContent=opened?'WhatsApp mesajınız yeni sekmede hazır. Göndermeden önce bilgileri kontrol edebilirsiniz.':'Tarayıcınız yeni pencereyi engelledi. Sağ alttaki WhatsApp bağlantısını kullanarak mesajınızı iletebilirsiniz.';});
+
+    const year=document.getElementById('year');if(year)year.textContent=String(new Date().getFullYear());
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveal=[...document.querySelectorAll('.value,.audience-card,.service-card,.brand-name,.section-head,.model,.plan,.policy-intro,.contact-intro,.contact-form')];
+    if(!reduce&&'IntersectionObserver'in window){reveal.forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--delay',`${Math.min((i%4)*65,195)}ms`);});const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08,rootMargin:'0px 0px -35px 0px'});reveal.forEach(el=>observer.observe(el));}else reveal.forEach(el=>el.classList.add('visible'));
+    const sections=[...document.querySelectorAll('main section[id]')];const navLinks=[...document.querySelectorAll('.nav a[href^="#"]')];if('IntersectionObserver'in window){const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(link=>link.removeAttribute('aria-current'));navLinks.find(link=>link.hash==='#'+entry.target.id)?.setAttribute('aria-current','location');}}),{rootMargin:'-43% 0px -48% 0px'});sections.forEach(section=>navObserver.observe(section));}
+  })();
+  </script>
+</body>
+</html>
